@@ -48,7 +48,7 @@ const BlockB: React.FC = () => {
   } = data.postBy.content;
 
   return (
-    <div className="pt-24 pb-24 bg-white px-[20px] md:px-[120px]">
+    <div className="pt-16 pb-24 bg-white px-[20px] md:px-[120px]">
       {/* Dit is het blok, niet aanpassen. Alleen kleur aanpassen */}
       <div className="grid grid-cols-12 gap-[20px]">
         {/* Dit is de grid, niet aanpassen. */}

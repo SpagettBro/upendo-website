@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import { useQuery, gql } from "@apollo/client";
-import '../app/globals.css';
+import "../app/globals.css";
 
 const BLOCK_A_QUERY = gql`
   query BlockAQuery($slug: String!) {
@@ -65,11 +65,14 @@ const BlockC: React.FC = () => {
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="font-heading text-heading text-lime">{heading}</h1>
-        <p className="font-body text-body text-white">{body1}</p>
+        <p className="md:px-96 font-body text-body text-white">{body1}</p>
       </div>
 
       {/* Cards Section */}
-      <div ref={sliderRef} className="pt-4 flex overflow-x-auto space-x-4 hide-scrollbar">
+      <div
+        ref={sliderRef}
+        className="pt-4 flex overflow-x-auto space-x-4 hide-scrollbar"
+      >
         {/* Create cards */}
         {Array.from({ length: 8 }).map((_, index) => (
           <div
@@ -98,7 +101,10 @@ const BlockC: React.FC = () => {
       </div>
 
       {/* Cards Section */}
-      <div ref={sliderRef} className="pt-4 flex overflow-x-auto   space-x-4 hide-scrollbar">
+      <div
+        ref={sliderRef}
+        className="pt-4 flex overflow-x-auto   space-x-4 hide-scrollbar"
+      >
         {/* Create cards */}
         {Array.from({ length: 8 }).map((_, index) => (
           <div
