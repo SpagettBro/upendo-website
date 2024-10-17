@@ -10,13 +10,17 @@
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
+    "aos": "^2.3.4",
     "graphql": "^16.9.0",
-    "next": "^14.2.15",
+    "gsap": "^3.12.5",
+    "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/gsap": "^1.20.2",
     "@types/node": "^20",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18",

@@ -49,12 +49,10 @@ const BlockD: React.FC = () => {
 
   return (
     <div className="pt-24 pb-24 bg-white px-[20px] md:px-[120px]">
-      {/* Dit is het blok, niet aanpassen. Alleen kleur aanpassen */}
-      <div className="grid grid-cols-12 gap-[100px]">
-        {/* Dit is de grid, afbeelding links en content rechts */}
-
-        {/* Afbeelding kolom op desktop */}
-        <div className="col-span-12 md:col-start-1 md:col-span-6 flex justify-center md:justify-start h-full">
+      {/* Grid container, mobiel 4 kolommen, desktop 12 kolommen */}
+      <div className="grid grid-cols-4 md:grid-cols-12 gap-[20px] md:gap-[100px]">
+        {/* Afbeelding kolom op desktop en mobiel */}
+        <div className="col-span-4 md:col-span-6 flex justify-center md:justify-start h-full">
           {image1?.node && (
             <img
               src={image1.node.sourceUrl}
@@ -66,29 +64,26 @@ const BlockD: React.FC = () => {
         </div>
 
         {/* Content kolom met heading, tekst en button */}
-        <div className="col-span-12 md:col-start-7 md:col-span-6 flex flex-col justify-between items-start text-left">
-          {/* Dit is de div met content */}
+        <div className="col-span-4 md:col-start-7 md:col-span-6 flex flex-col justify-between items-start text-left">
+          {/* Heading */}
           <h2 className="font-heading text-heading text-darkgreen">
             {heading}
           </h2>
-          {/* Dit is de heading */}
-          <p className="font-body text-body text-darkgreen mb-4">
-            {/* Dit is de body */}
-            {body1}
-          </p>
+
+          {/* Body tekst */}
+          <p className="font-body text-body text-darkgreen mb-4">{body1}</p>
 
           <p className="font-body text-body text-darkgreen">
-            {/* Dit is de body */}
             {body2}
-            <br></br>
-            <br></br>
+            <br />
+            <br />
             {body3}
           </p>
 
+          {/* Button */}
           <div className="mt-10 flex justify-center md:justify-start">
-            {/* Dit is de button, tekst aanpassen, styling niet */}
             <button className="font-button bg-green text-darkgreen px-6 h-[40px] rounded-full">
-              {button} {/* Using dynamic button content */}
+              {button}
             </button>
           </div>
         </div>
