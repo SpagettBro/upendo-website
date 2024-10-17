@@ -48,10 +48,12 @@ const BlockM: React.FC = () => {
   } = data.postBy.content;
 
   return (
-    <div className="pt-24 pb-24 bg-darkgreen px-[20px] md:px-[120px]">
+    <div className="pt-16 pb-16 bg-darkgreen px-[20px] md:px-[120px]">
       <div className="grid grid-cols-12 gap-[20px]">
         <div className="col-span-6 col-start-4 mt- flex flex-col w-full justify-center place-items-center">
-          <div className="font-heading text-heading text-lime">{heading}</div>
+          <div className="pb-2 font-heading text-heading text-lime">
+            {heading}
+          </div>
           <div className="font-subtext text-body text-white">{body1}</div>
         </div>
       </div>

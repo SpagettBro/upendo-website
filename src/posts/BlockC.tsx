@@ -64,7 +64,7 @@ const BlockC: React.FC = () => {
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="font-heading text-heading text-lime">{heading}</h1>
-        <p className="font-body text-body text-white">{body1}</p>
+        <p className="mx-96 font-body text-body text-white">{body1}</p>
       </div>
 
       {/* Cards Section */}
