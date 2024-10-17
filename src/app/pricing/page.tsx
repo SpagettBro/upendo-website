@@ -1,7 +1,7 @@
 "use client";
 
 import { ApolloWrapper } from "../../apollo";
-import BlockG from "../../posts/BlockG";
+import BlockJ from "../../posts/BlockJ";
 import BlockF from "../../posts/BlockF";
 import Header from "../../posts/Header";
 import Footer from "../../posts/footer";
@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
     <ApolloWrapper>
       <Header />
       <BlockF />
-      <BlockG />
+      <BlockJ />
       <Footer />
     </ApolloWrapper>
   );
