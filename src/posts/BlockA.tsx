@@ -106,7 +106,7 @@ const BlockA: React.FC = () => {
         </div>
       </div>
 
-      {/* 8 column grid met afbeeldingen */}
+      {/* 8 column grid met afbeeldingen  */}
       <div className="bg-darkgreen relative overflow-hidden pb-10 -m-12">
         <div className="flex animate-scroll whitespace-nowrap">
           <div className="flex">
