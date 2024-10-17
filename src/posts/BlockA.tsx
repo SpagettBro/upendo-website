@@ -107,7 +107,7 @@ const BlockA: React.FC = () => {
       </div>
 
       {/* 8 column grid met afbeeldingen */}
-      <div className="bg-darkgreen relative overflow-hidden pb-24">
+      <div className="bg-darkgreen relative overflow-hidden pb-10 -m-12">
         <div className="flex animate-scroll whitespace-nowrap">
           <div className="flex">
             {/* Dupliceren van de afbeeldingen om een eindeloze scroll te creëren */}

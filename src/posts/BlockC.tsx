@@ -62,29 +62,6 @@ const BlockC: React.FC = () => {
       </div>
 
       {/* Cards Section */}
-      <div ref={sliderRef} className="pt-4 flex overflow-x-auto space-x-4 hide-scrollbar">
-        {/* Create cards */}
-        {Array.from({ length: 8 }).map((_, index) => (
-          <div
-            key={index}
-            className="min-w-[250px] bg-white p-4 rounded-lg text-black h-full"
-          >
-            <p className="font-body text-body text-pink">06-12-2023</p>
-            <p className="font-body text-body text-darkgreen mt-2 pr-6">
-              {body2}
-            </p>
-            <div className="flex items-center mt-4">
-              {image1?.node && (
-                <img
-                  src={image1.node.sourceUrl}
-                  srcSet={image1.node.srcSet}
-                  width={48}
-                  height={48}
-                  alt="image"
-                  className="rounded-full"
-                />
-              )}
-              <p className="ml-4 font-body text-body text-darkgreen">{body3}</p>
       <div className="grid grid-cols-4 md:grid-cols-12 gap-4">
         <div
           ref={sliderRef}
@@ -151,30 +128,6 @@ const BlockC: React.FC = () => {
                   {body3}
                 </p>
               </div>
-      {/* Cards Section */}
-      <div ref={sliderRef} className="pt-4 flex overflow-x-auto space-x-4 hide-scrollbar">
-        {/* Create cards */}
-        {Array.from({ length: 8 }).map((_, index) => (
-          <div
-            key={index}
-            className="min-w-[250px] bg-white p-4 rounded-lg text-black h-full"
-          >
-            <p className="font-body text-body text-pink">06-12-2023</p>
-            <p className="font-body text-body text-darkgreen mt-2 pr-6">
-              {body2}
-            </p>
-            <div className="flex items-center mt-4">
-              {image1?.node && (
-                <img
-                  src={image1.node.sourceUrl}
-                  srcSet={image1.node.srcSet}
-                  width={48}
-                  height={48}
-                  alt="image"
-                  className="rounded-full"
-                />
-              )}
-              <p className="ml-4 font-body text-body text-darkgreen">{body3}</p>
             </div>
           ))}
         </div>
