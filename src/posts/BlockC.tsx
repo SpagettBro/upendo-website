@@ -98,7 +98,7 @@ const BlockC: React.FC = () => {
       </div>
 
       {/* Cards Section */}
-      <div ref={sliderRef} className="pt-4 flex overflow-x-auto space-x-4 hide-scrollbar">
+      <div ref={sliderRef} className="pt-4 flex overflow-x-auto   space-x-4 hide-scrollbar">
         {/* Create cards */}
         {Array.from({ length: 8 }).map((_, index) => (
           <div
