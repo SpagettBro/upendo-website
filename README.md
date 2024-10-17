@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Upendo Website
 
-## Getting Started
+A 5-week project for our ICT & Media course, created for the client 2manydots. This website is designed based on a provided style guide and aims to promote simplified data visualization and configuration for SMEs and semi-government organizations worldwide.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    Project Overview
+    Technologies
+    Steps
+    Installation
+    Configuration
+    Usage
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The Upendo project aims to provide a streamlined platform for data visualization and configuration, focusing on responsive design, user experience, and ease of use for businesses. It includes key components for Configuration, Optimization, Visualization, Analysis, and Training.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies
 
-## Learn More
+The following technologies were used in this project:
 
-To learn more about Next.js, take a look at the following resources:
+    Next.js: A React framework for server-side rendering.
+    GraphQL: For querying data.
+    Apollo: For managing GraphQL queries and mutations.
+    ACF Pro: Advanced Custom Fields plugin for WordPress integration.
+    WordPress: As the CMS for managing content.
+    Node.js: JavaScript runtime for running the project locally and managing dependencies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Steps
 
-## Deploy on Vercel
+Clone the repository:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    git clone https://github.com/your-repo/upendo-website.git
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Navigate into the project directory:
+
+    cd upendo-website
+
+Install dependencies:
+
+    npm install
+
+## Configuration
+
+Before running the project, ensure that you have the necessary environment variables set up (if applicable). You'll also need to configure the GraphQL and ACF connections in apollo.js.
+
+## Usage
+
+Add specific commands to start the development server or build the project.
