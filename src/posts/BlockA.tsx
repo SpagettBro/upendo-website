@@ -44,17 +44,7 @@ const BlockA: React.FC = () => {
   if (loading) return <p className="text-center text-white">Loading...</p>;
   if (error) return <p className="text-red-500">Error: {error.message}</p>;
 
-  const {
-    heading,
-    subtext1,
-    subtext2,
-    subtext3,
-    body1,
-    body2,
-    body3,
-    button,
-    image1,
-  } = data.postBy.content;
+  const { heading, body1, button, image1 } = data.postBy.content;
 
   const images = [
     image9,
@@ -70,59 +60,49 @@ const BlockA: React.FC = () => {
   return (
     <section className="bg-background">
       <div className="pt-24 bg-darkgreen px-[20px] md:px-[120px]">
-        {/* Dit is het blok, niet aanpassen. Alleen kleur aanpassen */}
         <div className="grid grid-cols-12 gap-[20px]">
-          {/* Dit is de grid, niet aanpassen. */}
           <div className="col-span-12 md:col-span-6 flex flex-col items-start text-left">
-            {/* Dit is de div met content, aanpassen op basis van de grootte. */}
             <h2 className="font-heading text-heading text-lime mb-2">
               {heading}
             </h2>
-            {/* Dit is de heading. */}
-            <p className="font-body text-body text-white mb-4">
-              {/* Dit is de body. */}
-              {body1}
-            </p>
+            <p className="font-body text-body text-white mb-4">{body1}</p>
 
             <div className="mt-4 flex justify-center md:justify-start">
-              {/* Dit is de button, tekst aanpassen, styling niet. */}
               <button className="font-button bg-green text-darkgreen px-6 h-[40px] rounded-full">
                 {button}
               </button>
             </div>
           </div>
 
-          {/* Afbeelding kolom op desktop, alleen hier */}
           <div className="hidden md:col-start-8 md:col-span-5 md:flex justify-end h-[100vh]">
             {image1?.node && (
               <img
                 src={image1.node.sourceUrl}
                 srcSet={image1.node.srcSet}
                 alt="image"
-                className="object-cover w-full h-full -mt-[6rem]" // Gebruik object-cover voor inzoomen en h-full voor volledige hoogte
+                className="object-cover w-full h-full -mt-[6rem]"
               />
             )}
           </div>
         </div>
       </div>
 
-      {/* 8 column grid met afbeeldingen */}
-      <div className="bg-darkgreen relative overflow-hidden pb-10">
+      {/* 8 column grid met afbeeldingen  */}
+      <div className="bg-darkgreen relative overflow-hidden pb-10 -m-12">
         <div className="flex animate-scroll whitespace-nowrap">
           <div className="flex">
-            {/* Dupliceren van de afbeeldingen om een eindeloze scroll te creëren */}
             {[...images, ...images].map((src, index) => (
               <div
                 key={index}
                 className="flex-shrink-0"
-                style={{ marginRight: "20px" }} // Ruimte tussen de logo's
+                style={{ marginRight: "60px" }} // Ruimte tussen de logo's
               >
                 <Image
                   src={src}
-                  alt={`image-${index + 2}`} // Alt text voor de afbeeldingen
-                  width={80} // Verklein de breedte voor mobiel
-                  height={47} // Verklein de hoogte voor mobiel
-                  className="object-cover pt-8" // Zorg ervoor dat de afbeelding goed wordt weergegeven
+                  alt={`image-${index + 2}`}
+                  width={110}
+                  height={64.35}
+                  className="object-cover"
                 />
               </div>
             ))}
@@ -133,27 +113,21 @@ const BlockA: React.FC = () => {
       {/* CSS voor animatie */}
       <style jsx>{`
         .animate-scroll {
-          animation: scroll 30s linear infinite; /* tijd aanpassen om de snelheid te wijzigen */
+          animation: scroll 30s linear infinite;
         }
 
         @keyframes scroll {
           0% {
-            transform: translateX(0); /* start positie */
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(
-              -${images.length * 120}px
-            ); /* Verschuift tot het einde van de afbeeldingen */
+            transform: translateX(-${images.length * 170}px);
           }
         }
 
         @media (max-width: 768px) {
           .animate-scroll {
-            animation: scroll 20s linear infinite; /* Snellere scroll op mobiel */
-          }
-
-          div.flex > div {
-            margin-right: 10px; /* Minder ruimte tussen afbeeldingen op mobiel */
+            animation: scroll 20s linear infinite;
           }
         }
       `}</style>
