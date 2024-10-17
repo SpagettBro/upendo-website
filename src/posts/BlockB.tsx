@@ -87,7 +87,7 @@ const BlockB: React.FC = () => {
               src={image1.node.sourceUrl}
               srcSet={image1.node.srcSet}
               alt="Contact Us"
-              className="object-cover h-full w-auto rounded-[15px]"
+              className="object-contain h-full w-auto rounded-[15px]"
             />
           )}
         </div>
