@@ -61,7 +61,7 @@ const BlockB: React.FC = () => {
           <p className="font-body text-body text-darkgreen mb-4">{body1}</p>
           <p className="font-body text-body text-darkgreen mb-10">{body2}</p>
 
-          <div className="bg-lime border-2 border-green rounded-xl py-6 px-[100px] flex flex-col items-start justify-between text-left h-full">
+          <div className="bg-lime border-2 border-green rounded-xl py-[7vh] px-[5vw] flex flex-col items-start justify-between text-left h-full">
             <p className="font-subtext text-subtext text-darkgreen mb-2">
               {/* Dit is de subtext. */}
               {subtext1}
