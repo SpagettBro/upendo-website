@@ -106,8 +106,8 @@ const BlockA: React.FC = () => {
         </div>
       </div>
 
-      {/* 8 column grid met afbeeldingen  */}
-      <div className="bg-darkgreen relative overflow-hidden pb-10 -m-12">
+      {/* 8 column grid met afbeeldingen */}
+      <div className="bg-darkgreen relative overflow-hidden pb-10">
         <div className="flex animate-scroll whitespace-nowrap">
           <div className="flex">
             {/* Dupliceren van de afbeeldingen om een eindeloze scroll te creëren */}
@@ -115,14 +115,14 @@ const BlockA: React.FC = () => {
               <div
                 key={index}
                 className="flex-shrink-0"
-                style={{ marginRight: "60px" }} // Ruimte tussen de logo's
+                style={{ marginRight: "20px" }} // Ruimte tussen de logo's
               >
                 <Image
                   src={src}
                   alt={`image-${index + 2}`} // Alt text voor de afbeeldingen
-                  width={110} // Breedte van de afbeelding
-                  height={64.35} // Hoogte van de afbeelding
-                  className="object-cover" // Zorg ervoor dat de afbeelding goed wordt weergegeven
+                  width={80} // Verklein de breedte voor mobiel
+                  height={47} // Verklein de hoogte voor mobiel
+                  className="object-cover pt-8" // Zorg ervoor dat de afbeelding goed wordt weergegeven
                 />
               </div>
             ))}
@@ -142,8 +142,18 @@ const BlockA: React.FC = () => {
           }
           100% {
             transform: translateX(
-              -${images.length * 170}px
+              -${images.length * 120}px
             ); /* Verschuift tot het einde van de afbeeldingen */
+          }
+        }
+
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation: scroll 20s linear infinite; /* Snellere scroll op mobiel */
+          }
+
+          div.flex > div {
+            margin-right: 10px; /* Minder ruimte tussen afbeeldingen op mobiel */
           }
         }
       `}</style>
