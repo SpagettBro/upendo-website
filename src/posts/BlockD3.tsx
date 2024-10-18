@@ -1,7 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const BLOCK_A_QUERY = gql`
   query BlockAQuery($slug: String!) {
@@ -32,6 +34,16 @@ const BlockD3: React.FC = () => {
     variables: { slug: postSlug },
   });
 
+  useEffect(() => {
+    // Initialiseer AOS
+    AOS.init();
+  }, []);
+
+  useEffect(() => {
+    // Zorg ervoor dat AOS opnieuw wordt geladen wanneer de component opnieuw wordt weergegeven
+    AOS.refresh();
+  }, [data]); // Je kan ook [] gebruiken als je wilt dat dit maar een keer gebeurt
+
   if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p className="text-red-500">Error: {error.message}</p>;
 
@@ -49,37 +61,37 @@ const BlockD3: React.FC = () => {
 
   return (
     <div className="pt-24 pb-24 bg-lime px-[20px] md:px-[120px]">
-      {/* Dit is het blok, niet aanpassen. Alleen kleur aanpassen */}
       <div className="grid grid-cols-12 gap-[20px]">
-        {/* Dit is de grid, niet aanpassen. */}
         <div className="col-span-12 md:col-span-6 flex flex-col justify-between items-start text-left">
-          {/* Dit is de div met content, aanpassen op basis van de grootte. */}
-          <h2 className="font-heading text-heading text-darkgreen">
+          <h2
+            className="font-heading text-heading text-darkgreen"
+            data-aos="fade-up"
+          >
             {heading}
           </h2>
-          {/* Dit is de heading. */}
-          <p className="font-body text-body text-darkgreen mb-4">
-            {/* Dit is de body. */}
+          <p
+            className="font-body text-body text-darkgreen mb-4"
+            data-aos="fade-up"
+          >
             {body1}
           </p>
-
-          <p className="font-body text-body text-darkgreen">
-            {/* Dit is de body. */}
+          <p className="font-body text-body text-darkgreen" data-aos="fade-up">
             {body2}
-            <br></br>
-            <br></br>
+            <br />
+            <br />
             {body3}
           </p>
 
-          <div className="mt-10 flex justify-center md:justify-start">
-            {/* Dit is de button, tekst aanpassen, styling niet. */}
+          <div
+            className="mt-10 flex justify-center md:justify-start"
+            data-aos="fade-up"
+          >
             <button className="font-button bg-green text-darkgreen px-6 h-[40px] rounded-full">
-              {button} {/* Using dynamic button content */}
+              {button}
             </button>
           </div>
         </div>
 
-        {/* Afbeelding kolom op desktop, alleen hier */}
         <div className="hidden md:col-start-8 md:col-span-5 md:flex justify-end h-full">
           {image1?.node && (
             <img
@@ -87,6 +99,7 @@ const BlockD3: React.FC = () => {
               srcSet={image1.node.srcSet}
               alt="image"
               className="object-cover h-full w-auto rounded-[15px]"
+              data-aos="fade-up"
             />
           )}
         </div>
