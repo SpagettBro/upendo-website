@@ -71,7 +71,8 @@ const BlockF: React.FC = () => {
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
         {/* Starter Plan */}
-        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white">
+        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white
+        transition-transform duration-300 hover:scale-105">
           <div className="flex-grow">
             <h3 className="font-subtext text-[24px] mb-2">Starter</h3>
             <p className="font-body text-black text-[14px] mb-4">
@@ -106,7 +107,8 @@ const BlockF: React.FC = () => {
         </div>
 
         {/* Essential Plan (Highlighted) */}
-        <div className="bg-white rounded-lg p-6 text-center shadow-lg border-4 border-[#A8ff1a] flex flex-col">
+        <div className="bg-white rounded-lg p-6 text-center shadow-lg border-4 border-[#A8ff1a] flex flex-col
+        transition-transform duration-300 hover:scale-105">
           <div className="flex-grow">
             <h3 className="font-subtext text-[24px] mb-2">Essential</h3>
             <p className="font-body text-black text-[14px] mb-4">
@@ -141,7 +143,8 @@ const BlockF: React.FC = () => {
         </div>
 
         {/* Professional Plan */}
-        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white">
+        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white
+        transition-transform duration-300 hover:scale-105">
           <div className="flex-grow">
             <h3 className="font-subtext text-[24px] mb-2">Professional</h3>
             <p className="font-body text-black text-[14px] mb-4">
@@ -176,7 +179,8 @@ const BlockF: React.FC = () => {
         </div>
 
         {/* Business+ Plan */}
-        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white">
+        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white
+        transition-transform duration-300 hover:scale-105">
           <div className="flex-grow">
             <h3 className="font-subtext text-[24px] mb-2">Business+</h3>
             <p className="font-body text-black text-[14px] mb-4">
