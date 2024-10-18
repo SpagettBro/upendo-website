@@ -1,7 +1,9 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const BLOCK_A_QUERY = gql`
   query BlockAQuery($slug: String!) {
@@ -32,6 +34,16 @@ const BlockG: React.FC = () => {
     variables: { slug: postSlug },
   });
 
+  useEffect(() => {
+    // Initialiseer AOS
+    AOS.init();
+  }, []);
+
+  useEffect(() => {
+    // Zorg ervoor dat AOS opnieuw wordt geladen wanneer de component opnieuw wordt weergegeven
+    AOS.refresh();
+  }, [data]);
+
   if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p className="text-red-500">Error: {error.message}</p>;
 
@@ -51,7 +63,10 @@ const BlockG: React.FC = () => {
     <div className="pt-16 pb-16 bg-lime px-[20px] md:px-[120px]">
       <div className="grid grid-cols-12 gap-[20px]">
         {/* Left Column */}
-        <div className="col-span-12 md:col-span-4 flex flex-col items-start text-left">
+        <div
+          className="col-span-12 md:col-span-4 flex flex-col items-start text-left"
+          data-aos="fade-up"
+        >
           <h2 className="font-subtext text-subtext text-darkgreen leading-tight mb-2">
             {subtext1}
           </h2>
@@ -79,7 +94,10 @@ const BlockG: React.FC = () => {
         </div>
 
         {/* Middle Column */}
-        <div className="col-span-12 md:col-span-4 flex flex-col items-start text-left">
+        <div
+          className="col-span-12 md:col-span-4 flex flex-col items-start text-left"
+          data-aos="fade-up"
+        >
           <h2 className="font-subtext text-subtext text-darkgreen leading-tight mb-2">
             {subtext2}
           </h2>
@@ -119,7 +137,10 @@ const BlockG: React.FC = () => {
         </div>
 
         {/* Right Column */}
-        <div className="col-span-12 md:col-span-4 flex flex-col items-start text-left">
+        <div
+          className="col-span-12 md:col-span-4 flex flex-col items-start text-left"
+          data-aos="fade-up"
+        >
           <h2 className="font-subtext text-subtext text-darkgreen leading-tight mb-2">
             {subtext3}
           </h2>
