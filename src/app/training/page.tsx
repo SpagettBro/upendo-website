@@ -7,6 +7,7 @@ import BlockJ from "../../posts/BlockJ";
 import BlockM from "../../posts/BlockM";
 import BlockG from "../../posts/BlockG";
 import BlockD from "../../posts/BlockD";
+import BlockP from "../../posts/BlockP";
 import Header from "../../posts/Header";
 import Footer from "../../posts/footer";
 
@@ -19,6 +20,7 @@ const HomePage: React.FC = () => {
       <BlockJ />
       <BlockO />
       <BlockG />
+      <BlockP />
       <BlockD />
       <Footer />
     </ApolloWrapper>

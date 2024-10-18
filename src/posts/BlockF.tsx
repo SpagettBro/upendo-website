@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useQuery, gql } from "@apollo/client";
 
 const BLOCK_A_QUERY = gql`
@@ -32,8 +32,6 @@ const BlockF: React.FC = () => {
     variables: { slug: postSlug },
   });
 
-  const [isMonthly, setIsMonthly] = useState(true); // State to toggle between Monthly/Yearly
-
   if (loading) return <p className="text-center">Loading...</p>;
   if (error) return <p className="text-red-500">Error: {error.message}</p>;
 
@@ -49,14 +47,6 @@ const BlockF: React.FC = () => {
     image1,
   } = data.postBy.content;
 
-  // Dynamic pricing based on Monthly/Yearly toggle
-  const pricing = {
-    starter: isMonthly ? "$50 / month" : "$500 / year",
-    essential: isMonthly ? "$120 / month" : "$1200 / year",
-    professional: isMonthly ? "$280 / month" : "$2800 / year",
-    businessPlus: isMonthly ? "Custom" : "Custom",
-  };
-
   return (
     <div className="pt-24 pb-24 bg-darkgreen px-[20px] md:px-[120px]">
       <h2 className="font-heading text-heading text-lime text-center mb-4">
@@ -69,18 +59,10 @@ const BlockF: React.FC = () => {
       {/* Toggle for Monthly/Yearly */}
       <div className="flex justify-center mb-12">
         <div className="flex items-center bg-gray-100 p-1 rounded-full">
-          <button
-            className={`px-3 py-1.5 font-button text-body rounded-full ${isMonthly ? "bg-green text-darkgreen" : "text-gray-500"
-              }`}
-            onClick={() => setIsMonthly(true)}
-          >
+          <button className="px-3 py-1.5 font-button text-body bg-green rounded-full">
             Monthly
           </button>
-          <button
-            className={`px-3 py-1.5 font-button text-body rounded-full ${!isMonthly ? "bg-green text-darkgreen" : "text-gray-500"
-              }`}
-            onClick={() => setIsMonthly(false)}
-          >
+          <button className="px-3 py-1.5 text-gray-500 text-body font-button">
             Yearly
           </button>
         </div>
@@ -89,8 +71,7 @@ const BlockF: React.FC = () => {
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[20px]">
         {/* Starter Plan */}
-        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white
-        transition-transform duration-300 hover:scale-105">
+        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white">
           <div className="flex-grow">
             <h3 className="font-subtext text-[24px] mb-2">Starter</h3>
             <p className="font-body text-black text-[14px] mb-4">
@@ -98,7 +79,7 @@ const BlockF: React.FC = () => {
             </p>
           </div>
           <div>
-            <p className="font-heading text-price mb-4">{pricing.starter}</p>
+            <p className="font-heading text-price mb-4">$50 / month</p>
           </div>
           <button className="font-button text-black border-2 border-black px-6 h-[40px] leading-4 rounded-full mb-4">
             Get Started
@@ -125,8 +106,7 @@ const BlockF: React.FC = () => {
         </div>
 
         {/* Essential Plan (Highlighted) */}
-        <div className="bg-white rounded-lg p-6 text-center shadow-lg border-4 border-[#A8ff1a] flex flex-col
-        transition-transform duration-300 hover:scale-105">
+        <div className="bg-white rounded-lg p-6 text-center shadow-lg border-4 border-[#A8ff1a] flex flex-col">
           <div className="flex-grow">
             <h3 className="font-subtext text-[24px] mb-2">Essential</h3>
             <p className="font-body text-black text-[14px] mb-4">
@@ -134,7 +114,7 @@ const BlockF: React.FC = () => {
             </p>
           </div>
           <div>
-            <p className="font-heading text-price mb-4">{pricing.essential}</p>
+            <p className="font-heading text-price mb-4">$120 / month</p>
           </div>
           <button className="font-button text-black bg-green px-6 h-[40px] leading-4 rounded-full mb-4">
             Get Started
@@ -161,8 +141,7 @@ const BlockF: React.FC = () => {
         </div>
 
         {/* Professional Plan */}
-        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white
-        transition-transform duration-300 hover:scale-105">
+        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white">
           <div className="flex-grow">
             <h3 className="font-subtext text-[24px] mb-2">Professional</h3>
             <p className="font-body text-black text-[14px] mb-4">
@@ -170,7 +149,7 @@ const BlockF: React.FC = () => {
             </p>
           </div>
           <div>
-            <p className="font-heading text-price mb-4">{pricing.professional}</p>
+            <p className="font-heading text-price mb-4">$280 / month</p>
           </div>
           <button className="font-button text-black border-2 border-black px-6 h-[40px] leading-4 rounded-full mb-4">
             Get Started
@@ -197,8 +176,7 @@ const BlockF: React.FC = () => {
         </div>
 
         {/* Business+ Plan */}
-        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white
-        transition-transform duration-300 hover:scale-105">
+        <div className="bg-white rounded-lg p-6 text-center shadow-md flex flex-col border-4 border-white">
           <div className="flex-grow">
             <h3 className="font-subtext text-[24px] mb-2">Business+</h3>
             <p className="font-body text-black text-[14px] mb-4">
@@ -206,10 +184,10 @@ const BlockF: React.FC = () => {
             </p>
           </div>
           <div>
-            <p className="font-heading text-price mb-4">{pricing.businessPlus}</p>
+            <p className="font-heading text-price mb-4">Custom</p>
           </div>
           <button className="font-button text-black border-2 border-black px-6 h-[40px] leading-4 rounded-full mb-4">
-            Contact Us
+            Contact Sales
           </button>
           <div className="font-body text-body">
             <ul className="list-none font-body text-black text-left">
@@ -223,10 +201,10 @@ const BlockF: React.FC = () => {
                 ✔ <span className="ml-4">Connecting</span>
               </li>
               <li className="flex items-center text-gray-400">
-                <span className="ml-[30px]">Visualize</span>
+                <span className="ml-8">Visualize</span>
               </li>
               <li className="flex items-center text-gray-400">
-                <span className="ml-[30px]">Dashboards</span>
+                <span className="ml-8">Dashboards</span>
               </li>
             </ul>
           </div>

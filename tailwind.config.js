@@ -1,32 +1,78 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+    darkMode: ["class"],
+    content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      colors: {
-        darkgreen: "#002626", // Hoofdkleur achtergrond
-        white: "#ffffff", // Hoofdkleur achtergrond
-        offwhite: "fefff8",
-        green: "#a8ff1a", // Achtergrondkleur van de knop
-        teal: "#003a47", // Kleur van de knoptekst
-        lime: "#eaffbd", // Kleur van de koptekst
-        pink: "#f4c5ff", // Kleur van de subtekst
-      },
-      fontFamily: {
-        heading: ["Area Normal", "sans-serif"],
-        subtext: ["Inter", "sans-serif"],
-        button: ["Martian Mono", "monospace"],
-      },
-      fontSize: {
-        heading: "60px", // Aangepaste fontgrootte voor heading
-        body: "16px", // Aangepaste fontgrootte voor subtext
-        subtext: "30px", // Aangepaste fontgrootte voor subtext
-        button: "18px", // Aangepaste fontgrootte voor button
-      },
-      height: {
-        main: "500px",
-      },
-    },
+  	extend: {
+  		colors: {
+  			darkgreen: '#002626',
+  			white: '#ffffff',
+  			offwhite: 'fefff8',
+  			green: '#a8ff1a',
+  			teal: '#003a47',
+  			lime: '#eaffbd',
+  			pink: '#f4c5ff',
+  			background: '#002626',
+  			foreground: 'hsl(var(--foreground))',
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		fontFamily: {
+  			heading: ["Area Normal", "sans-serif"],
+  			subtext: ["Inter", "sans-serif"],
+  			button: ["Martian Mono", "monospace"]
+  		},
+  		fontSize: {
+  			heading: '60px',
+  			body: '16px',
+  			subtext: '30px',
+  			button: '18px'
+  		},
+  		height: {
+  			main: '500px'
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		}
+  	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };

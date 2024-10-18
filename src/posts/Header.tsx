@@ -63,7 +63,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 bg-white flex z-1 justify-between items-center py-5 px-[20px] md:px-[120px] transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 bg-white flex z-999 justify-between items-center py-5 px-[20px] md:px-[120px] transition-transform duration-300 ${
         isHeaderVisible ? "translate-y-0" : "-translate-y-full"
       }`}
     >
