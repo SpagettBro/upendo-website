@@ -48,7 +48,7 @@ const BlockI: React.FC = () => {
   } = data.postBy.content;
 
   return (
-    <div className="pt-24 pb-12 bg-darkgreen px-[20px] md:px-[120px]">
+    <div className="hidden md:block pt-24 pb-12 bg-darkgreen px-[20px] md:px-[120px]">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
         {/* Center the cards in the middle 8 columns on larger screens */}
         <div className="col-start-3 col-span-8 flex justify-center items-center relative">
