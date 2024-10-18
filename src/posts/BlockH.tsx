@@ -48,7 +48,7 @@ const BlockH: React.FC = () => {
   } = data.postBy.content;
 
   return (
-    <div className="pt-16 pb-24 bg-lime px-[20px] md:px-[120px]">
+    <div className="pt-28 pb-24 bg-lime px-[20px] md:px-[120px]">
       {/* Container met flex voor centreren van elementen */}
       <div className="grid grid-cols-12 gap-[20px]">
         {/* Dit is de grid, niet aanpassen. */}
