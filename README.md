@@ -1,6 +1,6 @@
 # Upendo Website
 
-A 5-week project for our ICT & Media course, created for the client 2manydots. This website is designed based on a provided style guide and aims to promote simplified data visualization and configuration for SMEs and semi-government organizations worldwide.
+A 6-week project for our ICT & Media course, created for the client 2manydots. This website is designed based on a provided style guide and aims to promote simplified data visualization and configuration for SMEs and semi-government organizations worldwide.
 
 ## Table of Contents
 
@@ -25,6 +25,7 @@ The following technologies were used in this project:
     ACF Pro: Advanced Custom Fields plugin for WordPress integration.
     WordPress: As the CMS for managing content.
     Node.js: JavaScript runtime for running the project locally and managing dependencies.
+    Tailwind CSS: A utility-first CSS framework for styling user interfaces.
 
 
 ## Steps
@@ -43,7 +44,7 @@ Install dependencies:
 
 ## Configuration
 
-Before running the project, ensure that you have the necessary environment variables set up (if applicable). You'll also need to configure the GraphQL and ACF connections in apollo.js.
+Before running the project, ensure that you have the necessary environment variables set up (if applicable). You'll also need to configure the GraphQL and ACF connections in apollo.js, but this is not necessary.
 
 ## Usage
 
