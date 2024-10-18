@@ -59,7 +59,7 @@ const BlockA: React.FC = () => {
 
   return (
     <section className="bg-background">
-      <div className="pt-36 bg-darkgreen px-[20px] md:px-[120px]">
+      <div className="pt-24 bg-darkgreen px-[20px] md:px-[120px]">
         <div className="grid grid-cols-12 gap-[20px]">
           <div className="col-span-12 md:col-span-6 flex flex-col items-start text-left">
             <h2 className="font-heading text-heading text-lime mb-2">
